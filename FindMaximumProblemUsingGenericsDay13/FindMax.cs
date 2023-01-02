@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FindMaximumProblemUsingGenericsDay13
 {
-    internal class FindMax
-    {
-        public static void MaxNumber()          //Creating method to find maximum with CompareTo method
+    internal class FindMax<T> where T: IComparable
+    {    // **UC1**
+        /*public static void MaxNumber()          //Creating method to find maximum with CompareTo method
         {
             Console.WriteLine("Enter First Integer Number");
             int a = Convert.ToInt32(Console.ReadLine());
@@ -28,29 +28,33 @@ namespace FindMaximumProblemUsingGenericsDay13
             {
                 Console.WriteLine("The maximum number is : " + c);
             }
-        }
-        public static void MaxNumberFloat()         //Creating method to find maximum number using CompareTo method for float
-        {
-            Console.WriteLine("Enter First float Number");
-            float a = Convert.ToSingle(Console.ReadLine());
-            Console.WriteLine("Enter Second float Number");
-            float b = Convert.ToSingle(Console.ReadLine());
-            Console.WriteLine("Enter Third float Number");
-            float c = Convert.ToSingle(Console.ReadLine());
-            if ((a.CompareTo(b) > 0) && (a.CompareTo(c) > 0))
-            {
-                Console.WriteLine("The maximum number is:" + a);
-            }
-            else if ((b.CompareTo(a) > 0) && (b.CompareTo(c) > 0))
-            {
-                Console.WriteLine("The maximum number is: " + b);
-            }
-            else
-            {
-                Console.WriteLine("The maximum number is : " + c);
-            }
-        }
-        public static void MaxNumberString()         //Creating method to find maximum for string using ComapreTo method for string
+        }*/
+
+        // **UC2**
+        /* public static void MaxNumberFloat()         //Creating method to find maximum number using CompareTo method for float
+         {
+             Console.WriteLine("Enter First float Number");
+             float a = Convert.ToSingle(Console.ReadLine());
+             Console.WriteLine("Enter Second float Number");
+             float b = Convert.ToSingle(Console.ReadLine());
+             Console.WriteLine("Enter Third float Number");
+             float c = Convert.ToSingle(Console.ReadLine());
+             if ((a.CompareTo(b) > 0) && (a.CompareTo(c) > 0))
+             {
+                 Console.WriteLine("The maximum number is:" + a);
+             }
+             else if ((b.CompareTo(a) > 0) && (b.CompareTo(c) > 0))
+             {
+                 Console.WriteLine("The maximum number is: " + b);
+             }
+             else
+             {
+                 Console.WriteLine("The maximum number is : " + c);
+             }
+         }*/
+
+        // **UC3**
+       /*  public static void MaxNumberString()         //Creating method to find maximum for string using ComapreTo method for string
         {
             Console.WriteLine("Enter first string ");
             string a =Convert.ToString(Console.ReadLine());
@@ -69,6 +73,22 @@ namespace FindMaximumProblemUsingGenericsDay13
             else
             {
                 Console.WriteLine("The maximum  is : " + c);
+            }
+        }*/
+        public static T GenericMaxNumber(T first, T second, T third)          //Creating method to find maximum  by using Generic method
+        {
+           
+            if ((first.CompareTo(second) > 0) && (first.CompareTo(third) > 0))
+            {
+                return first;
+            }
+            else if ((second.CompareTo(first) > 0) && (second.CompareTo(third) > 0))
+            {
+                return second;
+            }
+            else
+            {
+                return third;
             }
         }
     }
