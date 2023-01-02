@@ -7,7 +7,15 @@ using System.Threading.Tasks;
 namespace FindMaximumProblemUsingGenericsDay13
 {
     internal class FindMax<T> where T: IComparable
-    {    // **UC1**
+    {  
+        public T first, second, third;
+        public FindMax(T first, T second, T third)
+        {
+            this.first = first;
+            this.second = second;
+            this.third = third;
+        }
+        // **UC1**
         /*public static void MaxNumber()          //Creating method to find maximum with CompareTo method
         {
             Console.WriteLine("Enter First Integer Number");
@@ -75,6 +83,8 @@ namespace FindMaximumProblemUsingGenericsDay13
                 Console.WriteLine("The maximum  is : " + c);
             }
         }*/
+
+        // Refactor -1
         public static T GenericMaxNumber(T first, T second, T third)          //Creating method to find maximum  by using Generic method
         {
            
@@ -90,6 +100,12 @@ namespace FindMaximumProblemUsingGenericsDay13
             {
                 return third;
             }
+        }
+        // Refactor -2
+        public void TestMaximum()
+        {
+            T res = GenericMaxNumber(first, second, third);
+            Console.WriteLine("Max:"+res);
         }
     }
 }
