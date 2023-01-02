@@ -6,7 +6,7 @@ namespace FindMaximumProblemUsingGenericsDay13
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Generics Problems");
+            FindMax.MaxNumber();
         }
     }
 }
