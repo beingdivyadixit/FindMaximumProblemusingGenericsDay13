@@ -6,7 +6,7 @@ namespace FindMaximumProblemUsingGenericsDay13
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter - \n 1: To find max for integer\n 2: To find max for floats\n 3: To find max for string\n 4: To find max using Generic Method\n 5: To find max using Generic class");
+            Console.WriteLine("Enter - \n 1: To find max for integer\n 2: To find max for floats\n 3: To find max for string\n 4: To find max using Generic Method\n 5: To find max using Generic class\n 6: To find max for mutliple parameter \n 7: Extended UC4 for print max ");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -100,7 +100,7 @@ namespace FindMaximumProblemUsingGenericsDay13
                         Console.WriteLine("Enter the count of float number");
                         int count1 = Convert.ToInt32(Console.ReadLine());
                         float[] numbersFloat = new float[count1];
-                        for (int i = 0; i < count; i++)
+                        for (int i = 0; i < count1; i++)
                         {
                             numbersFloat[i] = Convert.ToSingle(Console.ReadLine());
                         }
@@ -110,12 +110,48 @@ namespace FindMaximumProblemUsingGenericsDay13
                         Console.WriteLine("Enter the count of string");
                         int count2 = Convert.ToInt32(Console.ReadLine());
                         string[] numbersString = new string[count2];
-                        for (int i = 0; i < count; i++)
+                        for (int i = 0; i < count2; i++)
                         {
                             numbersString[i] = Convert.ToString(Console.ReadLine());
                         }
                         FindMax<string> obj3 = new FindMax<string>(numbersString);
                         obj3.MaxMethod();
+
+                    }
+                    break;
+                case 7:
+                    { //UC5
+
+                        //INTEGER
+                        Console.WriteLine("Enter the count of integer number");
+                        int count = Convert.ToInt32(Console.ReadLine());
+                        int[] numbersInt = new int[count];
+                        for (int i = 0; i < count; i++)
+                        {
+                            numbersInt[i] = Convert.ToInt32(Console.ReadLine());
+                        }
+                        FindMax<int> obj = new FindMax<int>(numbersInt);
+                        obj.PrintMaxValue();
+                        //FLOATS
+                        Console.WriteLine("Enter the count of float number");
+                        int count1 = Convert.ToInt32(Console.ReadLine());
+                        float[] numbersFloat = new float[count1];
+                        for (int i = 0; i < count1; i++)
+                        {
+                            numbersFloat[i] = Convert.ToSingle(Console.ReadLine());
+                        }
+                        FindMax<float> obj2 = new FindMax<float>(numbersFloat);
+                        obj2.PrintMaxValue();
+                        //STRING
+                        Console.WriteLine("Enter the count of string");
+                        int count2 = Convert.ToInt32(Console.ReadLine());
+                        string[] numbersString = new string[count2];
+                        for (int i = 0; i < count2; i++)
+                        {
+                            numbersString[i] = Convert.ToString(Console.ReadLine());
+                        }
+                        FindMax<string> obj3 = new FindMax<string>(numbersString);
+                        obj3.PrintMaxValue();
 
                     }
                     break;
