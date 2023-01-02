@@ -50,5 +50,26 @@ namespace FindMaximumProblemUsingGenericsDay13
                 Console.WriteLine("The maximum number is : " + c);
             }
         }
+        public static void MaxNumberString()         //Creating method to find maximum for string using ComapreTo method for string
+        {
+            Console.WriteLine("Enter first string ");
+            string a =Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Enter second string ");
+            string b = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Enter third string ");
+            string c = Convert.ToString(Console.ReadLine());
+            if ((a.CompareTo(b) >= 0) && (a.CompareTo(c) >= 0))
+            {
+                Console.WriteLine("The maximum  is:" + a);
+            }
+            else if ((b.CompareTo(a) >= 0) && (b.CompareTo(c) >= 0))
+            {
+                Console.WriteLine("The maximum  is: " + b);
+            }
+            else
+            {
+                Console.WriteLine("The maximum  is : " + c);
+            }
+        }
     }
 }
