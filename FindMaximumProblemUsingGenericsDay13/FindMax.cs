@@ -9,11 +9,17 @@ namespace FindMaximumProblemUsingGenericsDay13
     internal class FindMax<T> where T: IComparable
     {  
         public T first, second, third;
+        public T[] value;
         public FindMax(T first, T second, T third)
         {
             this.first = first;
             this.second = second;
             this.third = third;
+        }
+        //UC4
+        public FindMax(T[] value)
+        {
+            this.value = value;
         }
         // **UC1**
         /*public static void MaxNumber()          //Creating method to find maximum with CompareTo method
@@ -106,6 +112,22 @@ namespace FindMaximumProblemUsingGenericsDay13
         {
             T res = GenericMaxNumber(first, second, third);
             Console.WriteLine("Max:"+res);
+        }
+       
+        public T[] Sort(T[] values)
+        {
+            Array.Sort(values);
+            return values;
+        }
+        public T MaxValue(params T[] values)
+        {
+            var sorted_values = Sort(values);
+            return sorted_values[^1];
+        }
+        public T MaxMethod()
+        {
+            var max = MaxValue(this.value);
+            return max;
         }
     }
 }

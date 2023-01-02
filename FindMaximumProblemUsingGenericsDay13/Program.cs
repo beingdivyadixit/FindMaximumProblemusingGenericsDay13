@@ -83,6 +83,42 @@ namespace FindMaximumProblemUsingGenericsDay13
                         obj3.TestMaximum();
                     }
                     break;
+                case 6:
+                    {//UC-4
+
+                        //INTEGER
+                        Console.WriteLine("Enter the count of integer number");
+                        int count= Convert.ToInt32(Console.ReadLine());
+                        int[] numbersInt =new int[count];
+                        for (int i = 0; i < count; i++)
+                        {
+                            numbersInt[i] = Convert.ToInt32(Console.ReadLine());
+                        }
+                        FindMax<int> obj = new FindMax<int>(numbersInt);
+                        obj.MaxMethod();
+                        //FLOATS
+                        Console.WriteLine("Enter the count of float number");
+                        int count1 = Convert.ToInt32(Console.ReadLine());
+                        float[] numbersFloat = new float[count1];
+                        for (int i = 0; i < count; i++)
+                        {
+                            numbersFloat[i] = Convert.ToSingle(Console.ReadLine());
+                        }
+                        FindMax<float> obj2 = new FindMax<float>(numbersFloat);
+                        obj2.MaxMethod();
+                        //STRING
+                        Console.WriteLine("Enter the count of string");
+                        int count2 = Convert.ToInt32(Console.ReadLine());
+                        string[] numbersString = new string[count2];
+                        for (int i = 0; i < count; i++)
+                        {
+                            numbersString[i] = Convert.ToString(Console.ReadLine());
+                        }
+                        FindMax<string> obj3 = new FindMax<string>(numbersString);
+                        obj3.MaxMethod();
+
+                    }
+                    break;
                 default:
                     Console.WriteLine("Invalid Input");
                     break;
